@@ -6,7 +6,7 @@ import fs from 'fs';
 import yaml from 'js-yaml';
 import chalk from 'chalk';
 
-export const login = new Command().command("login").description("initialize a new in-ch cli").action(async () => {
+export const login = new Command().command("login").description("login inch-cli").action(async () => {
     console.log(chalk.bgMagentaBright("로그인을 진행합니다......"));
     const app = express();
 
