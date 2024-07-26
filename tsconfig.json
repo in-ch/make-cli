@@ -7,9 +7,7 @@
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "inlineSources": false,
-        "moduleResolution": "NodeNext",
-        "module": "NodeNext",
-        "target": "esnext",
+        "moduleResolution": "node",
         "noUnusedLocals": false,
         "noUnusedParameters": false,
         "preserveWatchOutput": true,
@@ -17,6 +15,8 @@
         "strict": true,
         "isolatedModules": false,
         "baseUrl": ".",
+        "target": "es2018",
+        "module": "es2022",
         "paths": {
             "@/*": [
                 "./*"
