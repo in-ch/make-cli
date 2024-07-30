@@ -6,8 +6,11 @@ import fs from 'fs';
 import yaml from 'js-yaml';
 import chalk from 'chalk';
 
+import boxedMessage from "@/src/utils/boxedMessage";
+
 export const login = new Command().command("login").description("login inch-cli").action(async () => {
-    console.log(chalk.bgMagentaBright("로그인을 진행합니다......"));
+    console.log(chalk.bgMagentaBright("login inch-cli"));
+    console.log(boxedMessage({ messages: ["Please login with your google account", "Only example.com domain is allowed"], minWidth: 40, minHeight: 5, borderColor: 'magenta', textColor: 'white' }));
     const app = express();
 
     const oauth2Client = new google.auth.OAuth2(
@@ -41,8 +44,8 @@ export const login = new Command().command("login").description("login inch-cli"
                 const payload = ticket.getPayload()!;
                 const domain = payload['hd'];
 
-                if (domain === 'neofect.com') {
-                    console.log(chalk.bgMagentaBright("로그인이 완료되었습니다."))
+                if (domain === 'example.com') {
+                    console.log(chalk.bgMagentaBright("login done"))
                     const inchcliConfig = {
                         code: String(req.query.code)
                     };
@@ -50,16 +53,16 @@ export const login = new Command().command("login").description("login inch-cli"
                     fs.writeFileSync(`${process.env.HOME}/inchcli.yaml`, yamlString);
 
                 } else {
-                    console.log(chalk.red("로그인에 실패했습니다."))
+                    console.log(chalk.red("login failed"))
                 }
                 await browser.close();
                 process.exit(0);
             } catch (error) {
-                res.send("로그인에 실패했습니다!");
+                res.send("login failed");
             }
         } else {
-            console.log(chalk.red("로그인에 실패했습니다."))
-            res.send("로그인에 실패했습니다!");
+            console.log(chalk.red("login failed"))
+            res.send("login failed");
         }
     });
 
