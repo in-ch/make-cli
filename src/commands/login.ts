@@ -4,12 +4,11 @@ import { google } from "googleapis";
 import puppeteer from "puppeteer";
 import fs from 'fs';
 import yaml from 'js-yaml';
-import chalk from 'chalk';
 
-import boxedMessage from "@/src/utils/boxedMessage";
+import boxedMessage from "@/src/utils/boxed-message";
 
 export const login = new Command().command("login").description("login inch-cli").action(async () => {
-    console.log(chalk.bgMagentaBright("login inch-cli"));
+    console.log("login inch-cli");
     console.log(boxedMessage({ messages: ["Please login with your google account", "Only example.com domain is allowed"], minWidth: 40, minHeight: 5, borderColor: 'magenta', textColor: 'white' }));
     const app = express();
 
@@ -45,7 +44,7 @@ export const login = new Command().command("login").description("login inch-cli"
                 const domain = payload['hd'];
 
                 if (domain === 'example.com') {
-                    console.log(chalk.bgMagentaBright("login done"))
+                    console.log("login done");
                     const inchcliConfig = {
                         code: String(req.query.code)
                     };
@@ -53,7 +52,7 @@ export const login = new Command().command("login").description("login inch-cli"
                     fs.writeFileSync(`${process.env.HOME}/inchcli.yaml`, yamlString);
 
                 } else {
-                    console.log(chalk.red("login failed"))
+                    console.log("login failed");
                 }
                 await browser.close();
                 process.exit(0);
@@ -61,7 +60,7 @@ export const login = new Command().command("login").description("login inch-cli"
                 res.send("login failed");
             }
         } else {
-            console.log(chalk.red("login failed"))
+            console.log("login failed");
             res.send("login failed");
         }
     });
