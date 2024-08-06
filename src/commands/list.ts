@@ -25,17 +25,15 @@ export const list = new Command()
       const description = match[2];
       results.push({ command, description });
     }
-    boxedMessage({
-      messages: ["Welcome to Inch's CLI", "Here is a list of commands."],
-      borderColor: "cyan",
-      align: "left",
-    });
-    tableMessage({
-      data: results,
-      borderColor: "lightBlack",
-      textColor: "lightGreen",
-    });
     fixedMessage({
-      message: "For more information, use the --help flag with the command.",
+      message: `${boxedMessage({
+        messages: ["Welcome to Inch's CLI", "Here is a list of commands."],
+        borderColor: "cyan",
+        align: "left",
+      })} \n${tableMessage({
+        data: results,
+        borderColor: "lightBlack",
+        textColor: "lightGreen",
+      })}`,
     });
   });
