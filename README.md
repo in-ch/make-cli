@@ -1,1 +1,1 @@
-# CLI 만들기 테스트
+# CLI CONSOLE MESSAGE
