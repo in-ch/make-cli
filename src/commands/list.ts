@@ -6,6 +6,7 @@ import { fileURLToPath } from "url";
 import boxedMessage from "@/src/utils/boxed-message";
 import tableMessage from "@/src/utils/table-message";
 import fixedMessage from "../utils/fixed-message";
+import imageMessage from "../utils/image-message";
 
 /**
  * @description This command will list all the tasks.
@@ -25,15 +26,19 @@ export const list = new Command()
       const description = match[2];
       results.push({ command, description });
     }
-    fixedMessage({
-      message: `${boxedMessage({
-        messages: ["Welcome to Inch's CLI", "Here is a list of commands."],
-        borderColor: "cyan",
-        align: "left",
-      })} \n${tableMessage({
-        data: results,
-        borderColor: "lightBlack",
-        textColor: "lightGreen",
-      })}`,
+    // fixedMessage({
+    //   message: `${boxedMessage({
+    //     messages: ["Welcome to Inch's CLI", "Here is a list of commands."],
+    //     borderColor: "cyan",
+    //     align: "left",
+    //   })} \n${tableMessage({
+    //     data: results,
+    //     borderColor: "lightBlack",
+    //     textColor: "lightGreen",
+    //   })}`,
+    // });
+    imageMessage({
+      imageUrl:
+        "https://st.depositphotos.com/2274151/4841/i/950/depositphotos_48410095-stock-photo-sample-blue-square-grungy-stamp.jpg",
     });
   });
