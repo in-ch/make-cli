@@ -27,7 +27,7 @@ export default function createSpinnerMessage({
   function stop() {
     clearInterval(interval);
     readline.cursorTo(process.stdout, 0);
-    process.stdout.write("");
+    process.stdout.write("\r \r");
   }
 
   return { start, stop };

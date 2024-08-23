@@ -1,3 +1,5 @@
+import readline from "readline";
+
 interface FixedMessageProps {
   message: string;
 }
@@ -10,7 +12,7 @@ interface FixedMessageProps {
 export default function fixedMessage({ message }: FixedMessageProps) {
   process.stdout.write("\x1b[H");
   setInterval(() => {
-    console.clear();
-    console.log(message);
+    process.stdout.write("\x1b[2J\x1b[0f");
+    process.stdout.write(message);
   }, 100);
 }

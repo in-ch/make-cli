@@ -30,7 +30,6 @@ export function createProgressBarMessage(
     complete: () => {
       current = totalTasks;
       update();
-      console.log("\nDone!");
     },
   };
 }
@@ -45,7 +44,7 @@ export default function progressBarMessage(totalTasks: number): void {
   function performTask(taskNumber: number): Promise<void> {
     return new Promise((resolve) => {
       setTimeout(() => {
-        console.log(`Task ${taskNumber}`);
+        process.stdout.write(`Task ${taskNumber}`);
         progressBar.increment();
         resolve();
       }, Math.random() * 1000);

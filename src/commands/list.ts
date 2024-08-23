@@ -28,28 +28,28 @@ export const list = new Command()
       const description = match[2];
       results.push({ command, description });
     }
-    // fixedMessage({
-    //   message: `${boxedMessage({
-    //     messages: ["Welcome to Inch's CLI", "Here is a list of commands."],
-    //     borderColor: "cyan",
-    //     align: "left",
-    //   })} \n${tableMessage({
-    //     data: results,
-    //     borderColor: "lightBlack",
-    //     textColor: "lightGreen",
-    //   })}`,
-    // });
+    fixedMessage({
+      message: `${boxedMessage({
+        messages: ["Welcome to Inch's CLI", "Here is a list of commands."],
+        borderColor: "cyan",
+        align: "left",
+      })} \n${tableMessage({
+        data: results,
+        borderColor: "lightBlack",
+        textColor: "lightGreen",
+      })}`,
+    });
     // imageMessage({
     //   imageUrl:
     //     "https://st.depositphotos.com/2274151/4841/i/950/depositphotos_48410095-stock-photo-sample-blue-square-grungy-stamp.jpg",
     // });
     // progressBarMessage(100);
 
-    const { start, stop } = createSpinnerMessage({
-      ms: 500,
-    });
-    start();
-    setTimeout(() => {
-      stop();
-    }, 2000);
+    // const { start, stop } = createSpinnerMessage({
+    //   ms: 500,
+    // });
+    // start();
+    // setTimeout(() => {
+    //   stop();
+    // }, 2000);
   });
