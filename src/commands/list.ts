@@ -5,9 +5,10 @@ import { fileURLToPath } from "url";
 
 import boxedMessage from "@/src/utils/boxed-message";
 import tableMessage from "@/src/utils/table-message";
-import fixedMessage from "../utils/fixed-message";
-import imageMessage from "../utils/image-message";
-import progressBarMessage from "../utils/progressbar-message";
+import fixedMessage from "@/src/utils/fixed-message";
+import imageMessage from "@/src/utils/image-message";
+import progressBarMessage from "@/src/utils/progressbar-message";
+import createSpinnerMessage from "@/src/utils/spinner-message";
 
 /**
  * @description This command will list all the tasks.
@@ -42,5 +43,13 @@ export const list = new Command()
     //   imageUrl:
     //     "https://st.depositphotos.com/2274151/4841/i/950/depositphotos_48410095-stock-photo-sample-blue-square-grungy-stamp.jpg",
     // });
-    progressBarMessage(100);
+    // progressBarMessage(100);
+
+    const { start, stop } = createSpinnerMessage({
+      ms: 500,
+    });
+    start();
+    setTimeout(() => {
+      stop();
+    }, 2000);
   });
