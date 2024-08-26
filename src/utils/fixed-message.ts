@@ -1,5 +1,3 @@
-import readline from "readline";
-
 interface FixedMessageProps {
   message: string;
 }

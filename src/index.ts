@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 import { Command } from "commander";
 
-import { list } from "@/src/commands/list";
+import { listCli } from "@/src/commands/list";
+import { imageMessageCli } from "@/src/commands/image-message";
 import { getPackageInfo } from "@/src/utils/get-package-info";
 
 process.on("SIGINT", () => process.exit(0));
@@ -17,7 +18,8 @@ async function main() {
       "-v, --version",
       "display the version number"
     );
-  program.addCommand(list);
+  program.addCommand(listCli);
+  program.addCommand(imageMessageCli);
   program.parse();
 }
 

@@ -6,14 +6,13 @@ import { fileURLToPath } from "url";
 import boxedMessage from "@/src/utils/boxed-message";
 import tableMessage from "@/src/utils/table-message";
 import fixedMessage from "@/src/utils/fixed-message";
-import imageMessage from "@/src/utils/image-message";
 import progressBarMessage from "@/src/utils/progressbar-message";
 import createSpinnerMessage from "@/src/utils/spinner-message";
 
 /**
  * @description This command will list all the tasks.
  */
-export const list = new Command()
+export const listCli = new Command()
   .command("list")
   .description("list all the tasks")
   .action(async () => {
@@ -39,10 +38,6 @@ export const list = new Command()
         textColor: "lightGreen",
       })}`,
     });
-    // imageMessage({
-    //   imageUrl:
-    //     "https://st.depositphotos.com/2274151/4841/i/950/depositphotos_48410095-stock-photo-sample-blue-square-grungy-stamp.jpg",
-    // });
     // progressBarMessage(100);
 
     // const { start, stop } = createSpinnerMessage({
