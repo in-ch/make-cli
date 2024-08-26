@@ -41,7 +41,8 @@
   "dependencies": {
     "commander": "^10.0.0",
     "fs-extra": "^11.2.0",
-    "image-to-ascii": "^3.2.0"
+    "image-to-ascii": "^3.2.0",
+    "inquirer": "^10.1.8"
   },
   "devDependencies": {
     "@babel/core": "^7.22.1",
