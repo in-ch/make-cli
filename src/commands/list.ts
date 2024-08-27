@@ -6,8 +6,6 @@ import { fileURLToPath } from "url";
 import boxedMessage from "@/src/utils/boxed-message";
 import tableMessage from "@/src/utils/table-message";
 import fixedMessage from "@/src/utils/fixed-message";
-import progressBarMessage from "@/src/utils/progressbar-message";
-import createSpinnerMessage from "@/src/utils/spinner-message";
 
 /**
  * @description This command will list all the tasks.
