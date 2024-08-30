@@ -36,13 +36,4 @@ export const listCli = new Command()
         textColor: "lightGreen",
       })}`,
     });
-    // progressBarMessage(100);
-
-    // const { start, stop } = createSpinnerMessage({
-    //   ms: 500,
-    // });
-    // start();
-    // setTimeout(() => {
-    //   stop();
-    // }, 2000);
   });

@@ -5,6 +5,7 @@ import { listCli } from "@/src/commands/list";
 import { imageMessageCli } from "@/src/commands/image-message";
 import { getPackageInfo } from "@/src/utils/get-package-info";
 import { fixedMessageCli } from "./commands/fixed-message";
+import { boxedMessageCli } from "./commands/boxed-message";
 
 process.on("SIGINT", () => process.exit(0));
 process.on("SIGTERM", () => process.exit(0));
@@ -22,6 +23,7 @@ async function main() {
   program.addCommand(listCli);
   program.addCommand(imageMessageCli);
   program.addCommand(fixedMessageCli);
+  program.addCommand(boxedMessageCli);
   program.parse();
 }
 

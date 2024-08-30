@@ -90,6 +90,8 @@ export default function boxedMessage({
     paddedMessages.push(emptyLine);
   }
 
+  console.log({ messages });
+
   const boxedMessage = [
     borderTop,
     emptyLine,
