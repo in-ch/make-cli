@@ -14,12 +14,12 @@ export function createProgressBarMessage(
 } {
   let current = 0;
 
-  function update() {
+  function update(_message: string = message) {
     const percentage = (current / totalTasks) * 100;
     const progress = Math.round((percentage / 100) * 20);
     const bar = "█".repeat(progress) + "-".repeat(20 - progress);
     removeRow(1);
-    process.stdout.write(`${message}: [${bar}] ${percentage.toFixed(2)}%`);
+    process.stdout.write(`[${bar}] ${percentage.toFixed(2)}% ${_message}\n`);
   }
 
   return {
@@ -39,12 +39,14 @@ export function createProgressBarMessage(
  * @description This function will display a progress bar message on the console.
  * @returns {void} console with the progress bar message
  */
-export default function progressBarMessage(totalTasks: number): void {
-  const progressBar = createProgressBarMessage(totalTasks);
+export default function progressBarMessage(
+  totalTasks: number,
+  message?: string
+): void {
+  const progressBar = createProgressBarMessage(totalTasks, message);
   function performTask(taskNumber: number): Promise<void> {
     return new Promise((resolve) => {
       setTimeout(() => {
-        process.stdout.write(`Task ${taskNumber}`);
         progressBar.increment();
         resolve();
       }, Math.random() * 1000);

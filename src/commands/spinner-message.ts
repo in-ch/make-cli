@@ -1,7 +1,6 @@
 import { Command } from "commander";
 import inquirer from "inquirer";
-import imageMessage from "@/src/utils/image-message";
-import createSpinnerMessage from "../utils/spinner-message";
+import createSpinnerMessage from "@/src/utils/spinner-message";
 
 /**
  * @description This command sends a spinner message to the console.
@@ -14,7 +13,7 @@ export const spinnerMessageCli = new Command()
       {
         type: "input",
         name: "time",
-        message: "How long do you want the spinner to last?",
+        message: "How long do you want the spinner to last? (ms)",
       },
     ];
     inquirer.prompt(questions).then(async (answers) => {

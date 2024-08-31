@@ -3,10 +3,11 @@ import { Command } from "commander";
 
 import { listCli } from "@/src/commands/list";
 import { imageMessageCli } from "@/src/commands/image-message";
+import { fixedMessageCli } from "@/src/commands/fixed-message";
+import { boxedMessageCli } from "@/src/commands/boxed-message";
+import { spinnerMessageCli } from "@/src/commands/spinner-message";
+import { progressbarMessageCli } from "@/src/commands/progressbar-message";
 import { getPackageInfo } from "@/src/utils/get-package-info";
-import { fixedMessageCli } from "./commands/fixed-message";
-import { boxedMessageCli } from "./commands/boxed-message";
-import { spinnerMessageCli } from "./commands/spinner-message";
 
 process.on("SIGINT", () => process.exit(0));
 process.on("SIGTERM", () => process.exit(0));
@@ -26,6 +27,7 @@ async function main() {
   program.addCommand(fixedMessageCli);
   program.addCommand(boxedMessageCli);
   program.addCommand(spinnerMessageCli);
+  program.addCommand(progressbarMessageCli);
   program.parse();
 }
 
