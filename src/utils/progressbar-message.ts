@@ -44,7 +44,7 @@ export default function progressBarMessage(
   message?: string
 ): void {
   const progressBar = createProgressBarMessage(totalTasks, message);
-  function performTask(taskNumber: number): Promise<void> {
+  function performTask(): Promise<void> {
     return new Promise((resolve) => {
       setTimeout(() => {
         progressBar.increment();
@@ -54,7 +54,7 @@ export default function progressBarMessage(
   }
   async function runTasks() {
     for (let i = 1; i <= totalTasks; i++) {
-      await performTask(i);
+      await performTask();
     }
     progressBar.complete();
   }
