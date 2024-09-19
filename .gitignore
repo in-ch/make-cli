@@ -3,3 +3,4 @@ dist
 .env
 index.py
 .DS_Store
+.changeset

@@ -1,7 +1,7 @@
 {
-  "name": "inch-cli",
-  "version": "0.0.1",
-  "description": "Add test",
+  "name": "varicon",
+  "version": "0.0.2",
+  "description": "Try using powerful, versatile, and easy console commands.",
   "publishConfig": {
     "access": "public"
   },
